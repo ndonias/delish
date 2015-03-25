@@ -1,0 +1,69 @@
+<div class="main-content">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-4">
+				<h2>Check out My Recipes</h2>
+			</div>
+		</div>
+	</div> <br/>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<p class="user-name">
+					<%= @user.fname %> <%= @user.lname %>
+				</p>
+				<div class= "profile-left">
+					<%= image_tag @user.gravatar_url(default: "wavatar", :size => 150) %> </br>
+					<span>Edit profile image at:<br/>
+						<a href="https://en.gravatar.com/" target="_blank">Gravatar.com </a>
+          			</span> 
+				
+					<p>Friends</p>
+					<p>Followers</p>
+					<p>Receipes</p>
+				</div>
+
+				<div class="users-container">
+				<p>All Users</p>
+				<% @users.each do |user| %>
+					<div class="all-users">
+						<%= link_to user_path(user) do %>
+						<div><%= image_tag user.gravatar_url(default: "identicon", :size => 150) %></div>
+              		<div><%= user.fname %></div>
+            		<% end %>
+					</div>
+				<%end%>
+			</div>
+			</div>
+
+			<div class="col-md-6 .col-md-offset-2">
+
+			<div class="column-right">
+			<% if @user.posts.any? %>
+			<%@user.posts.each do |post| %>
+			<div class = "receipe-container" data-id="<%= post.id %>">
+				<div>
+					<%=link_to posts_show_path(post) do %>
+					<%= image_tag post.main_image (:medium), :class => "image" %>
+					<%end%>
+				</div>
+				<div>
+					<p><%= link_to post.title, posts_show_path(post) %></p>
+				</div>
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem hic necessitatibus, nam, odio animi maiores laudantium repellat nisi optio laborum, provident quibusdam facere molestias fugiat magni ratione magnam doloremque voluptate Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis hic corrupti eius at iste doloribus ipsam inventore error quod repellendus consequatur dicta recusandae adipisci ipsum nobis similique, quisquam sed amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, porro. Nobis odio fugit earum esse, repellendus accusantium mollitia dignissimos nesciunt dolorem illo molestiae, excepturi, laboriosam eaque vel fuga facilis? Rerum.
+				</p>
+				<%end%>
+
+				<%else%>
+					<%= render partial: 'layouts/shared/instructions' %>
+				<%end%>
+			</div>
+		</div>
+	</div> <!--end of row-->
+	</div> <!--end of container-->
+	</div>
+</div>

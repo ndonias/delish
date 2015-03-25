@@ -1,0 +1,36 @@
+<div class="main-content">
+
+	<div id= "home-carousel" class = "carousel slide" data-ride="carousel">
+
+		<ol class="carousel-indicators">
+			<li data-target = "#home-carousel" data-slide-to = "0" class="active"></li>
+			<li data-target = "#home-carousel" data-slide-to = "1"></li>
+			<li data-target = "#home-carousel" data-slide-to = "2"></li>
+		</ol>
+
+		<div class= "carousel-inner" role="listbox">
+
+			<div class= "item active">
+				<%= image_tag("raspberry.jpg", alt: "image0") %>
+				<div class="carousel-caption">
+					<h3>Welcome to Delish</h3>
+				</div>
+			</div>
+
+			<div class= "item">
+				<%= image_tag("macroon.jpeg", alt: "image1") %>
+				<div class="carousel-caption">
+					<h3>Contribute your receipe</h3>
+				</div>
+			</div>
+
+			<div class= "item">
+				<%= image_tag("strawberry.jpg", alt: "image2") %>
+				<div class="carousel-caption">
+					<h3>Try out a new receipe today</h3>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

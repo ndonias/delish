@@ -1,0 +1,63 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body{
+	height: 100%;
+  font-family: montserrat;
+}
+
+#slogan{
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: -0.04em;
+}
+
+.main-content{
+  padding-top:60px;
+}
+
+/*Footer*/
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.social {
+  margin: 10px 15px;
+  font-size: medium;
+  text-align: center;
+
+  :hover {
+    color: hover;
+  }
+}
+
+.copyright {
+  text-align: center;
+}
+
+.foot-about {
+  display: inline-block;
+  text-align: center;
+
+  ul li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  li {
+    padding: 5px 10px;
+    border-right: light;
+    margin-left: -4px;
+    }
+}
+
