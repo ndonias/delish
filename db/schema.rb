@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323132024) do
+ActiveRecord::Schema.define(version: 20150401175023) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150323132024) do
     t.string   "main_image_file_size"
     t.datetime "main_image_updated_at"
     t.integer  "likes"
+    t.text     "story"
   end
 
   create_table "users", force: :cascade do |t|
