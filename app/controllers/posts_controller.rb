@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
-	before_action :set_post, only: [:edit, :update, :show, :destroy]
-  
+  respond_to :html, :json
   def index
-  	@post=Post.all
+  	@posts=Post.all
   end
 
   def new
@@ -16,12 +15,18 @@ class PostsController < ApplicationController
 
   def create
   	@post=Post.create(post_params)
-  	redirect_to @post, notice: "New post created."
+    @post.user_id = current_user.id
+    if @post.save
+      redirect_to @post, notice: "New post created."
+    else 
+      render :new, alert: "Sorry, something went wrong. Please try again."
+    end
   end
 
   def update
-  	@post.update(post_params)
-  	redirect_to @post, notice: "Post successfully updated."
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    respond_with @post
   end
 
   def destroy
@@ -29,10 +34,8 @@ class PostsController < ApplicationController
   	redirect_to posts_index_path, notice: "Post deleted."
   end
 
-  def edit
-  end
-
   def show
+    @post = Post.find(params[:id])
   	@comment=Comment.new(:post=>@post)
   end
 

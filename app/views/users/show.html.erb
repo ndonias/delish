@@ -41,29 +41,28 @@
 			<div class="col-md-6 .col-md-offset-2">
 
 			<div class="column-right">
-			<% if @user.posts.any? %>
-			<%@user.posts.each do |post| %>
-			<div class = "receipe-container" data-id="<%= post.id %>">
-				<div>
-					<%=link_to posts_show_path(post) do %>
-					<%= image_tag post.main_image (:medium), :class => "image" %>
-					<%end%>
-				</div>
-				<div>
-					<p><%= link_to post.title, posts_show_path(post) %></p>
-				</div>
-				</div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem hic necessitatibus, nam, odio animi maiores laudantium repellat nisi optio laborum, provident quibusdam facere molestias fugiat magni ratione magnam doloremque voluptate Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis hic corrupti eius at iste doloribus ipsam inventore error quod repellendus consequatur dicta recusandae adipisci ipsum nobis similique, quisquam sed amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, porro. Nobis odio fugit earum esse, repellendus accusantium mollitia dignissimos nesciunt dolorem illo molestiae, excepturi, laboriosam eaque vel fuga facilis? Rerum.
-				</p>
-				<%end%>
+					<% if @user.posts.any? %>
+					<%@user.posts.each do |post| %>
+					<div class = "receipe-container" data-id="<%= post.id %>">
+						<div>
+							<%=link_to post_path(post) do %>
+							<%= image_tag post.main_image (:medium), :class => "image" %>
+							<%end%>
+						</div>
+						<div>
+							<p><%= link_to post.title, post_path(post) %></p>
+						</div>
+						</div>
+						<p>
+							<%=post.story%>
+						</p>
+						<%end%>
 
-				<%else%>
-					<%= render partial: 'layouts/shared/instructions' %>
-				<%end%>
+						<%else%>
+							<%= render partial: 'layouts/shared/help' %>
+						<%end%>
 			</div>
 		</div>
 	</div> <!--end of row-->
 	</div> <!--end of container-->
-	</div>
 </div>

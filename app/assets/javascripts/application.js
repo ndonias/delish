@@ -11,7 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
+//= require best_in_place
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+	$(".best_in_place").best_in_place();
+	$(".edit-btn").click(function(){
+    $(".edit-text p").toggle(300);
+  });
+});

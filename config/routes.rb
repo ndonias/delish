@@ -1,27 +1,19 @@
 Rails.application.routes.draw do
-  get 'users/show'
+  root 'welcome#index'
+
+  get '/about' => 'welcome#about'
+
+  get '/help' => 'welcome#help'
+
+  # get '/users/:id' => 'users#show', as: :user
 
   devise_for :users
-  resources :posts
   resources :users, only: [:show]
 
-  resources :posts do
+  put 'users/:id/posts/edit' => 'tutorials#update', as: :edit_post
+
+  resources :posts, except: [:index, :edit] do
     resources :comments
   end
 
-  get 'comments/new'
-
-  get 'comments/edit'
-
-  get 'comments/show'
-
-  get 'posts/index'
-
-  get 'posts/new'
-
-  get 'posts/show'
-
-  get 'welcome/index'
-
-  root 'welcome#index'
 end

@@ -6,6 +6,9 @@ gem 'gravtastic'
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"
+gem 'best_in_place', '~> 3.0.1'
+gem 'retina_rails', '~> 2.0.0'
+gem 'jquery-ui-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

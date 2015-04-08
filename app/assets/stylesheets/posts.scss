@@ -85,3 +85,159 @@
   font-size: 30px;
   text-align: center
 }
+
+/*edit*/
+.edit-text {
+  margin: 15px 5px;
+  text-align: left;
+  color: gray;
+  
+  h1 {
+    padding: 0px;
+  }
+
+  p {
+    display: none;
+    margin: 20px;
+    text-align: center;
+  }
+
+  a:hover {
+    color: black;
+  }
+}
+
+.edit-btn {
+  background-color: lightblue;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 4px;
+}
+
+/*recipe*/
+.full-background {
+  background-color: #ebebeb;
+  height: 100%;
+  width: 100%;
+  margin-top: 10px;
+}
+.recipe-background {
+  padding: 10px 50px 0 50px;
+}
+
+.recipe-wrapper {
+  background: #FFF;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
+}
+
+.recipe-container {
+  background: #FFF;
+  margin-bottom: 3%;
+  border-radius: 4px;
+  padding: 10px;
+  // width: 32%;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
+
+  img {
+    width: 100%;
+  }
+}
+
+.recipe-text, .supplies {
+  text-align: left;
+  padding: 10px;
+  line-height: 20px;
+}
+
+.recipe-main-image {
+  width: 100%;
+}
+
+// .step-wrapper {
+//   margin-bottom: 10px;
+// }
+
+.step-text {
+  text-align: left;
+}
+
+.step-text p {
+  line-height: 25px;
+  text-align: left;
+  margin: 5%;
+}
+
+.step-text, .step-image {
+  width: 49%;
+  height: 370px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  background: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
+  margin-bottom: 10px;
+}
+
+.steps-wrapper {
+  background: #FFF;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
+}
+
+.step-review-wrapper {
+  box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
+  background: #FFF;
+  width: 97%;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 17px;
+  padding: 4%;
+}
+
+.new-step-wrapper {
+  background: #FFF;
+  width: 34%;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
+}
+
+.test-wrap {
+  width: 60%;
+  display: inline-block;
+}
+
+.show-container {
+  width: 100%;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.column .left {
+  width: 33%;
+  padding-left: 2%;
+}
+
+.column .right {
+  padding-left: 2%;
+  width: 66%;
+}

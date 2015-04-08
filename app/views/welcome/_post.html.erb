@@ -3,7 +3,9 @@
 		 <div class="col-xs-6 col-md-6 col-lg-4 list-blocks">
 		 		<div class="thumbnail">
 		 			<h3><%=post.title%></h3>
-		 			<%= link_to image_tag(post.main_image (:medium)), post_path(post.id)%>
+		 			<div class="index_image">
+		 				<%= link_to image_tag(post.main_image (:medium)), post_path(post.id)%>
+		 			</div>
 		 		<div class="caption">
 		 			<p><%= post.story %></p>
 		 		</div>

@@ -1,0 +1,40 @@
+<div class="main-content">
+<br>
+	<div class="background">
+		<div class="container">
+			<h3>Help is here</h3>
+			<h3>Click on "HOME" to browse recipes</h3>
+			<h3>Have a recipe to share?</h3>
+			<h4>These are the steps:</h4>
+			
+			<% if current_user %>
+			
+			<ol>
+				<li><p>Click "CREATE"</p></li>
+				<li><p>Give your recipe a title, tell us what you need, and then share the story behind the recipe.</p></li>
+				<li><p>Next show the steps necessary to create the dessert</p></li>
+				<li><p>Hit sumbit and share your recipe and fitspiration with the world!</p></li>
+				
+			    <div class="create-btn">
+			      <%= link_to "CREATE", new_post_path(current_user) %>
+			    </div>
+			    
+			    <div class="create-btn">
+			      <%= link_to "HOME", root_path %>
+			    </div>
+			</ol>
+
+			<% else %>
+			  <ol>
+			    <li><p>Click the "SIGN UP" button and register for an account.</p></li>
+			    <li><p>Once you are logged in, you can create a new tutorial.</p></li>
+			    <li><p>Add up to 10 steps, and don't forget to include some awesome photos!</p></li>
+			    
+			    <div class="create-btn">
+			      <%= link_to "HOME", root_path %>
+			    </div>
+			  </ol>
+			<% end %>
+		</div>
+	</div>
+</div>

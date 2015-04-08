@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401175023) do
+ActiveRecord::Schema.define(version: 20150402022930) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150401175023) do
     t.datetime "main_image_updated_at"
     t.integer  "likes"
     t.text     "story"
+    t.text     "retina_dimensions"
   end
 
   create_table "users", force: :cascade do |t|

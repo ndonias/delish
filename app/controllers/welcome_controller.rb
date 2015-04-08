@@ -3,4 +3,11 @@ class WelcomeController < ApplicationController
   	@user=User.all
   	@posts=Post.all
   end
+
+  def about
+  end
+
+  def help
+  end
+  
 end

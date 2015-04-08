@@ -1,27 +1,64 @@
 <div class="main-content">
-	<div class="receipe-background">
+	<div class="full-background recipe-background">
+		<div class="column left">
+			<div class="recipe-wrapper">
+				<% if current_user %>
+				<div class="edit-text">
+					<a href="#" class="edit-btn">EDIT</a>
+					<p>Click on recipe to make changes.</p>
+	        	</div>
+	        	<h1>
+	        		<%= best_in_place @post, :title, as: :input %>
+	        	</h1>
 
-		<h3><%=@post.title%></h3>
-			<p> <%=@post.body%> </p>
-			<div class="post-main-image">
-		          <%= image_tag @post.main_image (:medium) %>
-		        </div>
-			
+				<div class="post-main-image">
+					<%= image_tag @post.main_image (:medium) %>
+				</div>
+
+	    		<div class="tutorial-text">
+	    			<p><strong>The Story:</strong></p>
+	     		 	<p class="story"><%= best_in_place @post, :story, as: :textarea, url: edit_post_path(@post) %></p>
+	    		</div>
+
+				<% else %>
+					<h1> <%= @post.title %> </h1>
+					<div class="tutorial-main-image">
+	          			<%= image_tag @post.main_image (:medium) %>
+	        		</div>
+
+	        		<div class="tutorial-text" data-id="<%= @post.id %>">
+		        		<p><strong>Shared by:</strong> <%= link_to @post.user.fname, user_path(@post.user)%></p>
+
+		        		<p><strong>The Story:</strong></p>
+	          			<p class="story"><%= @post.story %></p>
+	        		</div>
+	        	<% end %>
+	        </div>
+	    </div>
+
+	    <div class="column-right">
+			<%= @post.body%>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<div class="container">
+			<div class="row">
 			<%=render '/comments/form' %>
-
 			<h3> Comments </h3>
-			
 			<% @post.comments.each do |comment|%>
-				<ul style="list-style: none;" >
-						<%= comment.body %>		</ul>
-						<% if current_user==comment.user %>
-						<%= link_to 'Edit', edit_post_comment_path(@post, comment)%>
-						<%= link_to 'Delete', [comment.post, comment],
-		               		:confirm => 'Are you sure?',
-		              		:method => :delete %>
+			<ul style="list-style: none;" >
+				<%= comment.body %>		
+			</ul>
+			<% if current_user==comment.user %>
+				<%= link_to 'Edit', edit_post_comment_path(@post, 	comment)%>
+				<%= link_to 'Delete', [comment.post, comment],
+				:confirm => 'Are you sure?', :method => :delete %>
 
-			<% end%>
-		<% end %>
-
+			<% end %>
+			<% end %>
+			</div>
+		</div>
 	</div>
 </div>

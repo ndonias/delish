@@ -18,9 +18,33 @@ html, body{
   padding-top:60px;
 }
 
-/*Recipes*/
-.list-blocks .list p{
-  width: 350px;
+.index_image{
+  height: 270px;
+  width: 300px;
+}
+
+/*About*/
+.about-text{
+  font-size: 1.25em;
+  line-height: 150%;
+  padding: 0 16%;
+  text-align: center;
+}
+
+.about-text p{
+  padding-top: 1em;
+}
+
+/*Help*/
+.background{
+  background-color: #ebebeb;
+  margin-top: 10px;
+}
+
+.background h3{
+  line-height: 90%;
+  display: block;
+  font-size: 1.5em;
 }
 
 /*Footer*/
@@ -42,7 +66,7 @@ html, body{
   text-align: center;
 
   :hover {
-    color: hover;
+    color: #575151;
   }
 }
 
@@ -64,5 +88,29 @@ html, body{
     border-right: light;
     margin-left: -4px;
     }
+}
+
+/*buttons*/
+.create-btn,
+.submit-btn {
+  width: 22%;
+  padding: 2%;
+  border: none;
+  margin-bottom: 5%;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+  text-align: center;
+  
+  a:hover {
+    color: #575151;
+  }
+}
+
+.create-btn {
+  display: inline-block;
+
+  &:hover {
+    color: #575151;
+  }
 }
 
