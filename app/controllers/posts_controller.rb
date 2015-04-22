@@ -30,8 +30,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-  	@post.destroy
-  	redirect_to posts_index_path, notice: "Post deleted."
+  	@post = Post.find(params[:id])
+    if @post.present?
+      @post.destroy
+    end
+    redirect_to root_url
   end
 
   def show

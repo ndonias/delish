@@ -19,6 +19,7 @@
 	    			<p><strong>The Story:</strong></p>
 	     		 	<p class="story"><%= best_in_place @post, :story, as: :textarea, url: edit_post_path(@post) %></p>
 	    		</div>
+	    		<%= link_to 'delete', post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>
 
 				<% else %>
 					<h1> <%= @post.title %> </h1>
